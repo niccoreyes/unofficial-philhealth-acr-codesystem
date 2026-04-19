@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "id": "phic-acr-hierarchical",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-04-20T00:07:09.095877Z"
+  },
+  "url": "http://www.philhealth.gov.ph/fhir/ValueSet/acr-hierarchical",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.8.2.20"
+    }
+  ],
+  "version": "2.3.0",
+  "name": "PHICACRLibraryHierarchical",
+  "title": "PhilHealth ACR Library - Hierarchical View",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Philippine Health Insurance Corporation",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.philhealth.gov.ph"
+        }
+      ]
+    }
+  ],
+  "description": "Hierarchical ValueSet for PhilHealth ACR Library. Ontology: ACR (Root) -> ICD/RVS (Categories) -> ACR Groups -> Codes. Use $expand with includeHierarchy=true or hierarchical=true to see nested structure.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.philhealth.gov.ph/fhir/CodeSystem/acr-library",
+        "version": "2.3.0-hierarchical"
+      }
+    ]
+  }
+}

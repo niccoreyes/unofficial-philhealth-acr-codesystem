@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "id": "phic-acr-icd-hierarchical",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-04-20T00:13:02.420562Z"
+  },
+  "url": "http://www.philhealth.gov.ph/fhir/ValueSet/acr-icd-hierarchical",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.8.2.30"
+    }
+  ],
+  "version": "2.3.0",
+  "name": "PHICACRICDHierarchical",
+  "title": "PhilHealth ACR Library - ICD-10 Hierarchical",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Philippine Health Insurance Corporation",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.philhealth.gov.ph"
+        }
+      ]
+    }
+  ],
+  "description": "Hierarchical ValueSet for ICD-10 diagnosis codes from PhilHealth ACR Library. Structure: ICD (Category) -> ACR Groups -> ICD Codes. Contains 342 groups with 4,705 ICD-10 codes.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.philhealth.gov.ph/fhir/CodeSystem/acr-library",
+        "version": "2.3.0-hierarchical",
+        "filter": [
+          {
+            "property": "codeType",
+            "op": "in",
+            "value": "CATEGORY,GROUP,ICD"
+          }
+        ]
+      }
+    ]
+  }
+}
