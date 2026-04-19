@@ -1,10 +1,11 @@
 # PhilHealth ACR FHIR CodeSystem
 
-**Unofficial FHIR R4 Implementation of PhilHealth All Case Rate (ACR) Library v2.3**
+**Community FHIR R4 Implementation of PhilHealth All Case Rate (ACR) Library v2.3**
 
 [![Status](https://img.shields.io/badge/status-active-green)]()
 [![FHIR Version](https://img.shields.io/badge/FHIR-R4-orange)]()
 [![Server](https://img.shields.io/badge/server-ontoserver-blue)]()
+[![Community](https://img.shields.io/badge/Community%20Implementation-blue)]()
 
 ## 📋 Overview
 
@@ -17,6 +18,21 @@ The ACR Library is PhilHealth's comprehensive case rate system containing:
 - **RVS (Relative Value Scale) procedure codes** with payment amounts
 - **Financial rules** including hospital/professional shares
 - **Facility eligibility** flags (H1, H2, H3, ASC, PCF, etc.)
+
+---
+
+## ⚠️ Disclaimer
+
+**This is a community implementation, not an official PhilHealth product.**
+
+This repository was created by **Thomas Reyes** as an open-source community project to provide FHIR R4 interoperability for the PhilHealth ACR Library. 
+
+- **Data Source:** Philippine Health Insurance Corporation (PhilHealth)
+- **Implementation:** Community-driven by Thomas Reyes
+- **Status:** Unofficial - not endorsed or maintained by PhilHealth
+- **Purpose:** To enable healthcare interoperability through FHIR standards
+
+If you need official PhilHealth FHIR resources, please contact PhilHealth directly.
 
 ### FHIR Implementation
 
@@ -310,9 +326,12 @@ The CodeSystem defines 40 properties including:
 
 - **Data Source:** Philippine Health Insurance Corporation (PhilHealth)
 - **ACR Library Version:** 2.3
-- **Publisher:** Philippine Health Insurance Corporation
+- **Original Publisher:** Philippine Health Insurance Corporation
+- **Community Implementation:** Thomas Reyes
 - **FHIR Format:** R4
 - **Purpose:** Interoperability and terminology services
+
+**Note:** This is a community-driven implementation. The original ACR Library data is owned by PhilHealth. The FHIR structure and implementation are provided by the community for interoperability purposes.
 
 ---
 
@@ -320,9 +339,12 @@ The CodeSystem defines 40 properties including:
 
 The FHIR resources in `output/` are provided for **interoperability purposes**.
 
-- **PhilHealth Data:** © Philippine Health Insurance Corporation
+- **Original Data:** © Philippine Health Insurance Corporation (ACR Library v2.3)
+- **Community Implementation:** © Thomas Reyes - Community Implementation
 - **FHIR Structure:** HL7 FHIR Standard (CC0)
-- **Implementation:** For healthcare information exchange
+- **Purpose:** For healthcare information exchange
+
+**Important:** This is a community implementation and is **not officially endorsed by PhilHealth**. Use at your own discretion. For official PhilHealth FHIR resources, please contact PhilHealth directly.
 
 ---
 
@@ -334,4 +356,6 @@ The FHIR resources in `output/` are provided for **interoperability purposes**.
 
 ---
 
-**Questions or issues?** Contact the PhilHealth FHIR Implementation Team.
+**Questions or issues?** [Open an issue on GitHub](https://github.com/niccoreyes/philippine-acr-fhir-codesystem/issues) - Community maintained by Thomas Reyes.
+
+For official PhilHealth inquiries, please contact [PhilHealth](https://www.philhealth.gov.ph) directly.
