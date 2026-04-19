@@ -1,6 +1,6 @@
-# Philippine ACR FHIR CodeSystem
+# PhilHealth ACR FHIR CodeSystem
 
-**Community FHIR R4 Implementation of Philippine All Case Rate (ACR) Library v2.3**
+**Unofficial FHIR R4 Implementation of PhilHealth All Case Rate (ACR) Library v2.3**
 
 [![Status](https://img.shields.io/badge/status-active-green)]()
 [![FHIR Version](https://img.shields.io/badge/FHIR-R4-orange)]()
@@ -8,11 +8,11 @@
 
 ## 📋 Overview
 
-This repository contains a **hierarchical FHIR CodeSystem** and **ValueSets** for the Philippine Health Insurance All Case Rate (ACR) Library Version 2.3.
+This repository contains a **hierarchical FHIR CodeSystem** and **ValueSets** for the Philippine Health Insurance Corporation (PhilHealth) All Case Rate (ACR) Library Version 2.3.
 
 ### What is ACR Library?
 
-The ACR Library is the comprehensive Philippine case rate system containing:
+The ACR Library is PhilHealth's comprehensive case rate system containing:
 - **ICD-10 diagnosis codes** with corresponding case rates
 - **RVS (Relative Value Scale) procedure codes** with payment amounts
 - **Financial rules** including hospital/professional shares
@@ -59,7 +59,7 @@ UnofficialACRCodeSystem/
 | `generate-codesystem.py` | Reads SQLite DB and creates hierarchical CodeSystem JSON | When source data changes |
 | `generate-valueset-complete.py` | Creates ValueSet referencing the complete CodeSystem | When CodeSystem is updated |
 | `generate-valueset-branches.py` | Creates ICD-only and RVS-only ValueSets | When CodeSystem is updated |
-| `acr-library-v2.3-source.db` | **Source data** from Philippine Health Insurance sources (proprietary) | Keep private, don't commit |
+| `acr-library-v2.3-source.db` | **Source data** from PhilHealth (proprietary) | Keep private, don't commit |
 | `CodeSystem-acr-hierarchical.json` | **Main output** - Hierarchical FHIR CodeSystem | Upload to terminology server |
 | `ValueSet-acr-complete.json` | Complete view with all codes | Use in Shrimp/validation |
 | `ValueSet-acr-icd.json` | ICD diagnosis codes only | Use when only ICD needed |
@@ -73,7 +73,7 @@ The CodeSystem uses a **4-level hierarchy** with `hierarchyMeaning: is-a`:
 
 ```
 ACR (Root)
-│   "Philippine All Case Rate (ACR) Library"
+│   "PhilHealth All Case Rate (ACR) Library"
 │
 ├── ICD (Category)
 │   │   "ICD-10 Diagnosis Codes"
@@ -308,10 +308,11 @@ The CodeSystem defines 40 properties including:
 
 ## 📞 Attribution
 
-- **Implementation:** Thomas Reyes - Community Implementation
-- **Data Source:** Philippine Health Insurance ACR Library v2.3
+- **Data Source:** Philippine Health Insurance Corporation (PhilHealth)
+- **ACR Library Version:** 2.3
+- **Publisher:** Philippine Health Insurance Corporation
 - **FHIR Format:** R4
-- **Purpose:** Healthcare interoperability and terminology services
+- **Purpose:** Interoperability and terminology services
 
 ---
 
@@ -319,9 +320,9 @@ The CodeSystem defines 40 properties including:
 
 The FHIR resources in `output/` are provided for **interoperability purposes**.
 
-- **Implementation:** © Thomas Reyes - Community Implementation
+- **PhilHealth Data:** © Philippine Health Insurance Corporation
 - **FHIR Structure:** HL7 FHIR Standard (CC0)
-- **Purpose:** For healthcare information exchange
+- **Implementation:** For healthcare information exchange
 
 ---
 
@@ -333,4 +334,4 @@ The FHIR resources in `output/` are provided for **interoperability purposes**.
 
 ---
 
-**Questions or issues?** [Open an issue on GitHub](https://github.com/niccoreyes/philippine-acr-fhir-codesystem/issues).
+**Questions or issues?** Contact the PhilHealth FHIR Implementation Team.
