@@ -356,6 +356,6 @@ The FHIR resources in `output/` are provided for **interoperability purposes**.
 
 ---
 
-**Questions or issues?** [Open an issue on GitHub](https://github.com/niccoreyes/philippine-acr-fhir-codesystem/issues) - Community maintained by Thomas Reyes.
+**Questions or issues?** [Open an issue on GitHub](https://github.com/niccoreyes/unofficial-philhealth-acr-codesystem/issues) - Community maintained by Thomas Reyes.
 
 For official PhilHealth inquiries, please contact [PhilHealth](https://www.philhealth.gov.ph) directly.
