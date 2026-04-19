@@ -1,4 +1,4 @@
-# PhilHealth ACR Library - Hierarchical Ontology (Refactored)
+# Philippine ACR Library - Hierarchical Ontology (Refactored)
 
 ## ✅ REFACTORING COMPLETE
 
@@ -37,7 +37,7 @@ ACR (Root - PhilHealth All Case Rate Library)
 
 | Level | Code Type | Count | Description |
 |-------|-----------|-------|-------------|
-| **Root** | ACR | 1 | PhilHealth All Case Rate Library |
+| **Root** | ACR | 1 | Philippine All Case Rate Library |
 | **Category** | ICD / RVS | 2 | Code categories |
 | **Groups** | CRxxxx / PCxxxx | 4,813 | ACR Case Rate and Primary Care groups |
 | **Codes** | ICD-10 / RVS | 9,217 | Actual diagnosis and procedure codes |
