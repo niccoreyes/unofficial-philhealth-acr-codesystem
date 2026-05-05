@@ -79,28 +79,38 @@ def load_data(conn: sqlite3.Connection) -> tuple:
         group_rvs[row[0]].append({"code": row[1], "description": row[2], "rvu": rvu})
     
     # Load ICD rules
+    # Convert MM/DD/YYYY to YYYY-MM-DD for proper date sorting
     cursor.execute("""
-        SELECT ACR_GROUPID, ICDCODE, MAX(EFF_DATE) as latest_date
+        SELECT ACR_GROUPID, ICDCODE, 
+               MAX(SUBSTR(EFF_DATE, 7, 4) || '-' || SUBSTR(EFF_DATE, 1, 2) || '-' || SUBSTR(EFF_DATE, 4, 2)) as latest_date
         FROM ACR_PERICD_RULES WHERE ACTIVE='T' GROUP BY ACR_GROUPID, ICDCODE
     """)
     icd_rules = {}
     for row in cursor.fetchall():
+        # Convert ISO date (YYYY-MM-DD) back to original format (MM/DD/YYYY) for lookup
+        iso_date = row[2]
+        original_date = iso_date[5:7] + '/' + iso_date[8:10] + '/' + iso_date[0:4]
         cursor.execute("SELECT * FROM ACR_PERICD_RULES WHERE ACR_GROUPID=? AND ICDCODE=? AND EFF_DATE=?",
-                      (row[0], row[1], row[2]))
+                      (row[0], row[1], original_date))
         rule_row = cursor.fetchone()
         if rule_row:
             columns = [desc[0] for desc in cursor.description]
             icd_rules[(row[0], row[1])] = dict(zip(columns, rule_row))
     
     # Load RVS rules
+    # Convert MM/DD/YYYY to YYYY-MM-DD for proper date sorting
     cursor.execute("""
-        SELECT ACR_GROUPID, RVSCODE, MAX(EFF_DATE) as latest_date
+        SELECT ACR_GROUPID, RVSCODE,
+               MAX(SUBSTR(EFF_DATE, 7, 4) || '-' || SUBSTR(EFF_DATE, 1, 2) || '-' || SUBSTR(EFF_DATE, 4, 2)) as latest_date
         FROM ACR_PERRVS_RULES WHERE ACTIVE='T' GROUP BY ACR_GROUPID, RVSCODE
     """)
     rvs_rules = {}
     for row in cursor.fetchall():
+        # Convert ISO date (YYYY-MM-DD) back to original format (MM/DD/YYYY) for lookup
+        iso_date = row[2]
+        original_date = iso_date[5:7] + '/' + iso_date[8:10] + '/' + iso_date[0:4]
         cursor.execute("SELECT * FROM ACR_PERRVS_RULES WHERE ACR_GROUPID=? AND RVSCODE=? AND EFF_DATE=?",
-                      (row[0], row[1], row[2]))
+                      (row[0], row[1], original_date))
         rule_row = cursor.fetchone()
         if rule_row:
             columns = [desc[0] for desc in cursor.description]
