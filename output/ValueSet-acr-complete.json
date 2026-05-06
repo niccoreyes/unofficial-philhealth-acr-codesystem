@@ -12,7 +12,7 @@
       "value": "urn:oid:2.16.840.1.113883.3.8.2.20"
     }
   ],
-  "version": "2.3.0",
+  "version": "2.3.1",
   "name": "PHICACRLibraryHierarchical",
   "title": "PhilHealth ACR Library - Hierarchical View",
   "status": "active",
@@ -33,7 +33,7 @@
     "include": [
       {
         "system": "http://www.philhealth.gov.ph/fhir/CodeSystem/acr-library",
-        "version": "2.3.0-hierarchical"
+        "version": "2.3.1-hierarchical"
       }
     ]
   }
